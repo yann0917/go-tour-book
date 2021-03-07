@@ -18,6 +18,7 @@ func NewRouter() *gin.Engine {
 			tags.DELETE("/:id", tag.Delete)
 			tags.PUT("/:id", tag.Update)
 			tags.PATCH("/:id/state", tag.Update)
+			tags.GET("/:id", tag.Get)
 			tags.GET("", tag.List)
 		}
 		article := v1.NewArticle()
@@ -27,6 +28,7 @@ func NewRouter() *gin.Engine {
 			articles.DELETE("/:id", article.Delete)
 			articles.PUT("/:id", article.Update)
 			articles.PATCH("/:id/state", article.Update)
+			articles.GET("/:id", article.Get)
 			articles.GET("", article.List)
 		}
 	}

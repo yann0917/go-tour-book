@@ -1,5 +1,7 @@
 # 博客之旅
 
+> 源码[blog-service](https://github.com/go-programming-tour-book/blog-service)
+>
 ## 技术选型
 
 * web 框架 [`gin`](https://github.com/gin-gonic/gin), [gin-example](https://github.com/eddycjy/go-gin-example)
@@ -63,9 +65,9 @@ PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章标签�
 ### 2.3 公共组件
 
 * 错误码标准化
-* 配置管理
-* 数据库连接
-* 日志写入
+* 配置管理,使用[viper](https://github.com/spf13/viper)
+* 数据库连接，使用[gorm-v1](https://github.com/go-gorm/gorm)
+* 日志写入，使用[lumberjack](https://github.com/natefinch/lumberjack)
 * 响应处理
 
 ### 2.4 接口文档
