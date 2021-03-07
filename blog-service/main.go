@@ -29,6 +29,10 @@ func init() {
 	}
 }
 
+// @title 博客系统
+// @version 1.0
+// @description GO 编程之旅
+// @termsOfService http://swagger.io/terms/
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	r := routers.NewRouter()

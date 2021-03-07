@@ -72,6 +72,8 @@ PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章标签�
 
 ### 2.4 接口文档
 
+* 使用 [gin-swagger](https://github.com/swaggo/gin-swagger) 作为 API 文档框架
+
 ### 2.5 接口校验
 
 ### 2.6 模块开发：标签管理
