@@ -5,12 +5,14 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "github.com/yann0917/go-tour-book/blog-service/docs"
+	"github.com/yann0917/go-tour-book/blog-service/internal/middleware"
 	v1 "github.com/yann0917/go-tour-book/blog-service/internal/routers/v1"
 )
 
 func NewRouter() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger(), gin.Recovery())
+	r.Use(middleware.Translations())
 
 	apiv1 := r.Group("/api/v1")
 	{
