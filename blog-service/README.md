@@ -82,8 +82,31 @@ PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章标签�
 
 ### 2.8 上传图片和文件服务
 
+* 文件服务使用 `gin.StaticFS` 提供静态资源站点
+
 ### 2.9 API访问控制
 
+* [jwt-go](https://github.com/dgrijalva/jwt-go) Golang implementation of JSON Web Tokens (JWT)
+* gin JWT 中间件
+
+```sql
+CREATE TABLE `blog_auth` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `app_key` varchar(20) DEFAULT '' COMMENT 'key',
+  `app_secret` varchar(50) DEFAULT '' COMMENT 'secret',
+  `created_on` int(10) unsigned DEFAULT '0' COMMENT '创建时间',
+  `created_by` varchar(100) DEFAULT '' COMMENT '创建人',
+  `modified_on` int(10) unsigned DEFAULT '0' COMMENT '修改时间',
+  `modified_by` varchar(100) DEFAULT '' COMMENT '修改人',
+  `deleted_on` int(10) unsigned DEFAULT '0' COMMENT '删除时间',
+  `is_del` tinyint(3) unsigned DEFAULT '0' COMMENT '是否删除 0为未删除、1为已删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='jwt认证管理';
+
+-- insert
+INSERT INTO `blog_service`.`blog_auth`(`id`, `app_key`, `app_secret`,`created_on`, `created_by`, `modified_on`, `modified_by`, `deleted_on`,`is_del`) 
+VALUES (1, 'eddycjy', 'go-programming-tour-book', 0, 'eddycjy', 0,'', 0, 0);
+```
 ### 2.10 常见应用中间件
 
 ### 2.11 链路追踪
