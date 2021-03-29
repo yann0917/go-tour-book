@@ -16,6 +16,7 @@ App:
     - .jpg
     - .jpeg
     - .png
+  DefaultContextTimeout: 30
 Database:
   DBType: mysql
   Username: root
@@ -35,7 +36,7 @@ JWT:
 Email:
   Host: smtp.qq.com
   Port: 465
-  UserName: xxx
+  UserName: 386139859@qq.com
   Password: xxx
   IsSSL: true
   From: xxx

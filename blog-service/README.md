@@ -104,10 +104,15 @@ CREATE TABLE `blog_auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='jwt认证管理';
 
 -- insert
-INSERT INTO `blog_service`.`blog_auth`(`id`, `app_key`, `app_secret`,`created_on`, `created_by`, `modified_on`, `modified_by`, `deleted_on`,`is_del`) 
+INSERT INTO `blog_auth`(`id`, `app_key`, `app_secret`,`created_on`, `created_by`, `modified_on`, `modified_by`, `deleted_on`,`is_del`) 
 VALUES (1, 'eddycjy', 'go-programming-tour-book', 0, 'eddycjy', 0,'', 0, 0);
+
 ```
+
 ### 2.10 常见应用中间件
+
+* [gomail](https://github.com/go-gomail/gomail) SMTP服务发送电子邮件库
+* [ratelimit](https://github.com/juju/ratelimit) 令牌桶实现的限流中间件
 
 ### 2.11 链路追踪
 
