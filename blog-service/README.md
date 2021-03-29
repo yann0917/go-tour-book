@@ -130,6 +130,11 @@ VALUES (1, 'eddycjy', 'go-programming-tour-book', 0, 'eddycjy', 0,'', 0, 0);
 
 ### 2.12 编译程序应用
 
+* Go语言的编译器默认支持并发编译和编译缓存，能够明显提升编译效率
+* 缩小编译产生的二进制文件，如非必要情况，不建议压缩
+    1. `go build -ldflags="-w -s"` 去掉DWARF调试信息和符号表信息
+    2. 使用 [upx](https://github.com/upx/upx) 工具
+
 ### 2.13 优雅重启和停止
 
 ### 2.14 思考
