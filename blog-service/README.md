@@ -78,13 +78,11 @@ PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章标签�
 
 ### 2.6 模块开发：标签管理
 
-### 2.7 模块开发：文章管理
-
-### 2.8 上传图片和文件服务
+### 2.7 上传图片和文件服务
 
 * 文件服务使用 `gin.StaticFS` 提供静态资源站点
 
-### 2.9 API访问控制
+### 2.8 API访问控制
 
 * [jwt-go](https://github.com/dgrijalva/jwt-go) Golang implementation of JSON Web Tokens (JWT)
 * gin JWT 中间件
@@ -109,19 +107,24 @@ VALUES (1, 'eddycjy', 'go-programming-tour-book', 0, 'eddycjy', 0,'', 0, 0);
 
 ```
 
-### 2.10 常见应用中间件
+### 2.9 常见应用中间件
 
 * [gomail](https://github.com/go-gomail/gomail) SMTP服务发送电子邮件库
 * [ratelimit](https://github.com/juju/ratelimit) 令牌桶实现的限流中间件
 
-### 2.11 链路追踪
+### 2.10 链路追踪
 
-### 2.12 应用配置问题
+* [jaeger](https://www.jaegertracing.io/docs/1.22/)
+* [opentracing-go](https://github.com/opentracing/opentracing-go)
+* [jaeger-client-go](https://github.com/jaegertracing/jaeger-client-go)
+* [opentracing-gorm](https://github.com/eddycjy/opentracing-gorm) SQL 追踪
 
-### 2.13 编译程序应用
+### 2.11 应用配置问题
 
-### 2.14 优雅重启和停止
+### 2.12 编译程序应用
 
-### 2.15 思考
+### 2.13 优雅重启和停止
+
+### 2.14 思考
 
 ---

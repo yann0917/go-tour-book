@@ -32,6 +32,7 @@ func NewRouter() *gin.Engine {
 	r.Use(middleware.RateLimiter(methodLimiters))
 	r.Use(middleware.ContextTimeout(global.AppSetting.DefaultContextTimeout))
 	r.Use(middleware.Translations())
+	r.Use(middleware.Tracing())
 
 	upload := NewUpload()
 	r.POST("/upload/file", upload.UploadFile)

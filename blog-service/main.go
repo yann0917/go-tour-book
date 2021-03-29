@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/yann0917/go-tour-book/blog-service/pkg/tracer"
+
 	"github.com/gin-gonic/gin"
 	"github.com/yann0917/go-tour-book/blog-service/global"
 	"github.com/yann0917/go-tour-book/blog-service/internal/model"
@@ -71,6 +73,11 @@ func setupSetting() error {
 	if err != nil {
 		return err
 	}
+
+	err = setupTracer()
+	if err != nil {
+		return err
+	}
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second
 	global.JWTSetting.Expire *= time.Second
@@ -95,5 +102,18 @@ func setupLogger() error {
 		LocalTime: true,
 	}, "",
 		log.LstdFlags).WithCaller(2)
+	return nil
+}
+
+func setupTracer() error {
+	jaegerTracer, _, err := tracer.NewJaegerTracer(
+		"blog-service",
+		"192.168.1.3:6831",
+	)
+
+	if err != nil {
+		return err
+	}
+	global.Tracer = jaegerTracer
 	return nil
 }
