@@ -121,6 +121,13 @@ VALUES (1, 'eddycjy', 'go-programming-tour-book', 0, 'eddycjy', 0,'', 0, 0);
 
 ### 2.11 应用配置问题
 
+1. 可使用命令行参数写入配置
+2. 写入系统环境变量, 使用 `os.Getenv("xxx")` 读取
+3. 可借助第三方库将配置文件打包至二进制文件里，如 [go-bindata](https://github.com/go-bindata/go-bindata) ， 但是会导致文件增大
+4. 集中式配置中心
+
+* 配置热更新 [fsnotify](https://github.com/fsnotify/fsnotify)
+
 ### 2.12 编译程序应用
 
 ### 2.13 优雅重启和停止
